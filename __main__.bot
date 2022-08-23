@@ -24,17 +24,17 @@ class __config__;{
 			minimist.argv ["$1"]
 		};{ sys:Debug [identify: msg]; }
 		
-		local set__default=$(curl -sL "https://raw.githubusercontent.com/Bayu12345677/Bot-chat/master/config.json" --insecure)
+		local set__default=$(curl --parallel --parallel-max 500 -sL "https://raw.githubusercontent.com/Bayu12345677/Bot-chat/master/config.json" --insecure)
 		#echo "$msg"
-		var get::all = $(cat $(@return: [set::default])|jq -r .config|grep -Po 'msg([0-9]|\n)*')
+		var get::all = $(echo "$(@return: [set::default])"|jq -r .config|grep -Po 'msg([0-9]|\n)*')
 		let split_array=0
 		for total_msg in $(echo "$(@return: [get::all])"); do {
-			eval get__reply=($(cat $(@return: [set::default])|{ jq -r .config[].${total_msg}[0].reply; }|tr "A-Z0-9*" "a-z0-9*"))
+			eval get__reply=($(echo "$(@return: [set::default])"|{ jq -r .config[].${total_msg}[0].reply; }|tr "A-Z0-9*" "a-z0-9*"))
 			for cek_isi in ${get__reply[@]}; do
 				#if (test -z "${get__reply[$split_array]}"); then let split_array=($split_array + 1); fi
 				#echo -e "$msg ${get__reply[$split_array]}"
 				if [[ "${msg}" =~ ${get__reply[${split_array}]} ]]; then
-					eval __array_send=($(cat $(@return: [set::default])|{ jq -r .config[]."${total_msg}"[1].send; }))
+					eval __array_send=($(echo "$(@return: [set::default])"|{ jq -r .config[]."${total_msg}"[1].send; }))
 					local random__element=$(echo "${!__array_send[@]}"|sed 's/[[:space:]]/\n/g'|sort --parallel=2 -R|head -1)
 					var get::send = $(echo "${__array_send[${random__element}]}")
 					var get::status = "True"

@@ -24,7 +24,7 @@ class __config__;{
 			minimist.argv ["$1"]
 		};{ sys:Debug [identify: msg]; }
 		
-		var set::default = "config.json"
+		local set__default=$(curl -sL )
 		#echo "$msg"
 		var get::all = $(cat $(@return: [set::default])|jq -r .config|grep -Po 'msg([0-9]|\n)*')
 		let split_array=0

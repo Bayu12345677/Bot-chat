@@ -1,0 +1,74 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+source <(cat lib/moduler.sh)
+
+Namespace Std :: Sys && {
+	{ Bash.import: feature/io.echo; };
+	{ Bash.import: colorsh/ink; };
+	{ Bash.import: Shua/Ua; };
+	{ Bash.import: minimist/args; };
+}
+
+sys:Debug { project bot chat }
+
+class __config__;{
+	{
+		public: app =\> [cek_pesan];
+		public: app =\> [respon];
+		public: app =\> [ambil_input];
+	}
+
+	public __config__::cek_pesan()
+	{
+		{
+			minimist.argv ["$1"]
+		};{ sys:Debug [identify: msg]; }
+		
+		var set::default = "config.json"
+		#echo "$msg"
+		var get::all = $(cat $(@return: [set::default])|jq -r .config|grep -Po 'msg([0-9]|\n)*')
+		let split_array=0
+		for total_msg in $(echo "$(@return: [get::all])"); do {
+			eval get__reply=($(cat $(@return: [set::default])|{ jq -r .config[].${total_msg}[0].reply; }|tr "A-Z0-9*" "a-z0-9*"))
+			for cek_isi in ${get__reply[@]}; do
+				#if (test -z "${get__reply[$split_array]}"); then let split_array=($split_array + 1); fi
+				#echo -e "$msg ${get__reply[$split_array]}"
+				if [[ "${msg}" =~ ${get__reply[${split_array}]} ]]; then
+					eval __array_send=($(cat $(@return: [set::default])|{ jq -r .config[]."${total_msg}"[1].send; }))
+					local random__element=$(echo "${!__array_send[@]}"|sed 's/[[:space:]]/\n/g'|sort --parallel=2 -R|head -1)
+					var get::send = $(echo "${__array_send[${random__element}]}")
+					var get::status = "True"
+					@return: [get::send];break;
+				else { if (test "$get__status" == "True"); then true;else { var get::status = "False"; };fi };fi
+				let split_array++
+			done
+			let split_array=0
+			if (test "$get__status" == "True"); then break;fi
+		};done
+				if (test "$get__status" == "True");then return 0
+				else say.Echo "Saya Tidak Mengerti Tolong ajari saya";fi
+	}
+
+	public __config__::respon()
+	{
+		__config__::cek_pesan msg="$@"
+	}
+
+	public __config__::ambil_input()
+	{
+		{
+			minimist.argv ["$1"]
+		};{ sys:Debug [Input=\<str\>]; }
+		var input::type = $(@return: [sender]|tr "A-Z0-9*" "a-z0-9*")
+		__config__::respon "$(@return: [input::type])"
+	}
+} && { const: __config__ =\> cl; }
+
+# testing
+: { cl.ambil_input sender="halo" }
+
+# while true; do
+#	read -p "You : " input
+#	var response::bot = $(cl.ambil_input sender="$input")
+#	say.Echo "Bot : $(@return: [response::bot])"
+# done

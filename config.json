@@ -2,10 +2,10 @@
 	"config":[
 		{
                         "msg1":[{"reply":"'h(e|a)lo bro$' 'h(e|a)lo$'"},{"send":"'halo juga' 'halo'"}],
-                        "msg2":[{"reply":"'p$' 'ngab$' 'bro$' 'woi$' 'woi[[:space:]](ngab|bro)$' "},{"send":"'ada apa' 'napa ?'"}],
+                        "msg2":[{"reply":"'p$' 'ngab$' 'bro$' 'woi$' 'woi[[:space:]][a-z0-9]*$' "},{"send":"'ada apa' 'napa ?'"}],
                         "msg3":[{"reply":"':v$' 'gua mau curhat$' ':($'"},{"send":"'mau curhat ?' ':v' 'owalah'"}],
-                        "msg4":[{"reply":"'kemaren gua [a-z0-9]$' 'tadi gua [a-z0-9]$' 'kenapa gua [a-z0-9]$'"},{"send":"'owh' 'begitu' 'aowowow'"}],
-                        "msg5":[{"reply":"'tentang[[:space:]][a-zA-Z0-9]*$' 'kemar(e|i)n[[:space:]][a-zA-Z0-9]*$' 'entahlah$' 'tadi[[:space:]][a-zA-Z0-9].*$'"},{"send":"'owh' 'yaudah sabar ae :v'"}],
+                        "msg4":[{"reply":"'kemaren gua [a-z0-9]*$' 'tadi gua [a-z0-9]*$' 'kenapa gua [a-z0-9]*$'"},{"send":"'owh' 'begitu' 'aowowow'"}],
+                        "msg5":[{"reply":"'tentang[[:space:]][a-zA-Z0-9]*$' 'kemar(e|i)n[[:space:]][a-zA-Z0-9]*$' 'entahlah$' 'tadi[[:space:]][a-z0-9]*$'"},{"send":"'owh' 'yaudah sabar ae :v'"}],
                         "msg6":[{"reply":"'selamat pagi$' 'selamat pagi [a-z0-9]*$'"},{"send":"'selamat pagi' 'pagi juga'"}],
                         "msg7":[{"reply":"'author$' 'creator|pembuat script|pembuat bot|siapa author kamu$'"},{"send":"'pembuat Ai ini adalah Bayu Rizky A.M Terinspirasi dari simi bot'"}]
                 }

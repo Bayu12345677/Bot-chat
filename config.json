@@ -6,7 +6,7 @@
                         "msg3":[{"reply":"':v' 'gua mau curhat' ':('"},{"send":"'mau curhat ?' ':v' 'owalah'"}],
                         "msg4":[{"reply":"'kemaren gua' 'tadi gua' 'kenapa gua'"},{"send":"'owh' 'begitu' 'aowowow'"}],
                         "msg5":[{"reply":"'tentang[[:space:]][a-zA-Z0-9]*' 'kemar(e|i)n[[:space:]][a-zA-Z0-9]*' 'entahlah' 'tadi[[:space:]][a-zA-Z0-9].*$'"},{"send":"'owh' 'yaudah sabar ae :v'"}],
-                        "msg6":[{"reply":"'selamat pagi' 'selamat pagi [[a-z0-9]]*"},{"send":"'selamat pagi' 'pagi juga'"}]
+                        "msg7":[{"reply":"'selamat pagi' 'selamat pagi [a-z0-9]*"},{"send":"'selamat pagi' 'pagi juga'"}]
 		}
 	]
 }

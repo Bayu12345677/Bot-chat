@@ -14,7 +14,7 @@
 			"msg11":[{"reply":"'sini (gua|saya) (ajarin|ajarin[[:space:]][a-z0-9]*)|(saya|gua) (ajarin|[a-z0-9]*)$'"},{"send":"'ajarin apa ?' 'tentang ?'"}],
 	                "msg12":[{"reply":"'kosa kata$'"},{"send":"'kosa kata apa ?'"}],
                         "msg13":[{"reply":"'boleh kenalan$'"},{"send":"'kaga boleh Luh jelek'"}],
-                        "msg14":[{"reply":"'anda tau celek$'"},{"send":"'tau yaitu itu Luh wowkwkow'"}]
+                        "msg14":[{"reply":"'(anda|kamu|ente) tau celek$'"},{"send":"'tau yaitu itu Luh wowkwkow'"}]
                 }
 	]
 }

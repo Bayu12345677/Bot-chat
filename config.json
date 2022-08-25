@@ -10,7 +10,7 @@
                         "msg7":[{"reply":"'author$' 'creator|pembuat script|pembuat bot|siapa author kamu$'"},{"send":"'pembuat Ai ini adalah Bayu Rizky A.M Terinspirasi dari simi bot'"}],
 			"msg8":[{"reply":"'hai$' 'hai cewek$' 'hai ciwi$' 'hai mani(z|s)$' 'hai sayang$' 'hai[[:space:]][a-z0-9]*$'"},{"send":"'haha jomblo' 'hai juga jones :V' 'hai juga penolep' 'hai juga reptil' 'hai juga kodomo' 'hai juga'"}],
 			"msg9":[{"reply":"'a(z|s)u|anj|anj(i|e)ng|segawon|kir(i|e)k|a(s|z)ui$'"},{"send":"'asu dewe' 'lu asu' 'bacot lu skubidu' 'anj triak anj'"}],
-			"msg10":[{"reply":"'(.|lu)bacot|bct|banyak omong|kakean cangkem|cocote|cocotmu|cangkemu$'"},{"send":"'lu yg bacot' 'gua ini bot lu diem gua diem' 'teken ctrl dan z'"}]
+			"msg10":[{"reply":"'bacot|bct|banyak omong|kakean cangkem|cocote|cocotmu|cangkemu$'"},{"send":"'lu yg bacot' 'gua ini bot lu diem gua diem' 'teken ctrl dan z'"}]
                 }
 	]
 }

@@ -15,7 +15,7 @@
 	                "msg12":[{"reply":"'kosa kata$'"},{"send":"'kosa kata apa ?'"}],
                         "msg13":[{"reply":"'boleh kenalan$'"},{"send":"'kaga boleh Luh jelek'"}],
                         "msg14":[{"reply":"'(anda|kamu|ente) tau celek$'"},{"send":"'tau yaitu itu Luh wowkwkow'"}],
-                        "msg15":[{"reply":"'hari (senin|selasa|rabu|kamis|jum'at|sabtu)$'"},{"send":"'hari biasa'"}],
+                        "msg15":[{"reply":"'hari (senin|selasa|rabu|kamis|(jum'at|jumat)|sabtu)$'"},{"send":"'hari biasa'"}],
                         "msg16":[{"reply":"'hari minggu$'"},{"send":"'hari libur'"}]
                 }
 	]
